@@ -1,0 +1,19 @@
+#include <stdio.h>
+int MissingNumber(int array[], int N) {
+    int expected_sum = N * (N + 1) / 2;
+    int actual_sum = 0;
+    for (int i = 0; i < N - 1; i++) {
+        actual_sum += array[i];
+    }
+    int missing_number = expected_sum - actual_sum;
+    return missing_number;
+}
+int main() {
+    int array1[] = {1, 2, 3, 5};
+    int N1 = 5;
+    printf("Missing number is: %d\n", MissingNumber(array1, N1)); // Output: 4
+    int array2[] = {6, 1, 2, 8, 3, 4, 7, 10, 5};
+    int N2 = 10;
+    printf("Missing number is: %d\n", MissingNumber(array2, N2)); // Output: 9
+    return 0;
+}
